@@ -1,46 +1,31 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Web Application to creature and manipulate Meshes in a sandbox environment.
+Realized using Three JS (https://threejs.org/)
 
-In the project directory, you can run:
+## Initializing web-app
+- After cloning the project either run 'npm install' while in the root folder, or see the Docker section
+- Run the web app using 'npm start'. By default the app will be served on http://localhost:3000/
 
-### `npm start`
+## Building Docker Container
+- cd into the root of the folder
+- run docker build . -t "name-of-the-image" to build the image itself
+- Once the image has been build, use docker run -p 3000:3000 --name name-of-the-container "name-of-the-image"
+- the image while building will download automatically the required packages and it will default to http://localhost:3000/ aswell
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Building the application
+- While in the root, run "npm run build". This will create a "build" directory containing the optimized code
+- execute "serve -s .\build\" to launch the app
+- if the serve command has not been found, install it via "npm install -g serve"
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Structure of the app
+- The app all resides inside the .\src folder
+- inside it, you can find
+	- components -> contains the various React sub-components, used to assemble the page.
+	- data -> Holds all the static data used by the application
+	- icons -> small images destined to be used inside components as a minor part
+	- pages -> base routes for the web app
+	- types -> contains the interfaces and types used by typescript
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Envinroment
+- Tested on both Firefox (120.0) and Chrome (119.0.6045.199)

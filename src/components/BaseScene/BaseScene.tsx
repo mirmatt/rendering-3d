@@ -1,7 +1,7 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
 import CameraControl from "../CameraControl/CameraControl";
-import { Euler, PlaneGeometry } from "three";
+import { Euler } from "three";
 
 interface BaseSceneProps {
     children?: React.ReactNode;

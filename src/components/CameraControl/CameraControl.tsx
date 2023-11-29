@@ -1,11 +1,8 @@
 import {
-    FirstPersonControls,
-    FlyControls,
-    OrbitControls,
-    PerspectiveCamera,
+    FirstPersonControls
 } from "@react-three/drei";
-import { Camera, useFrame, useThree } from "@react-three/fiber";
-import { Ref, useEffect, useRef } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
 
 interface CameraMovement {
     goLeft: boolean;

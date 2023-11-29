@@ -1,14 +1,15 @@
-import { Ref, useState } from "react";
+import { useState } from "react";
 import style from "./Actions.module.css";
-import THREE from "three";
 import MeshFactory from "../MeshFactory/MeshFactory";
 import styles from "./Actions.module.css"
+/** Those two are fixed for the bug mentionted at line 21 */
+import { ExtendedCameraRef, ExtendedDivRef } from "../../types/ActionsFixes";
 
 interface ActionsProps {
     createMesh: Function
 	removeMesh?: Function
-	cameraRef: Ref<THREE.PerspectiveCamera> | undefined
-	sceneRef?: Ref<HTMLDivElement>
+	cameraRef: ExtendedCameraRef | undefined
+	sceneRef?: ExtendedDivRef
 }
 /**
  *
