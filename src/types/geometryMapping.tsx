@@ -1,6 +1,3 @@
-import { Box, Icosahedron, Sphere, Tetrahedron } from "@react-three/drei"
-import { BufferGeometry } from "three"
-
 
 interface genericMapping {
 	[key: string] : React.ReactNode

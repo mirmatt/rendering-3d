@@ -6,6 +6,10 @@ interface MeshListProps {
     deleteMesh: Function;
 }
 
+/**
+ * 
+ * @description Simple component to make it easier to modify the elements of the Mesh List. Contains the button to delete a mesh, and they are identified by their unique ID
+ */
 const MeshList: React.FC<MeshListProps> = (props) => {
     return (
         <div className={styles.meshListContainer}>

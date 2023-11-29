@@ -26,6 +26,9 @@ interface CameraControlsProps {
     setCameraRef: Function;
 }
 
+/**
+ * @description Component that actually move the camera. Also sets the ref for it.
+ */
 const CameraControl: React.FC<CameraControlsProps> = (props) => {
     const getCamera = useThree((state) => state.get);
 

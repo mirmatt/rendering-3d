@@ -9,8 +9,16 @@ interface BaseSceneProps {
 	setSceneRef: Function
 }
 
+/**
+ * 
+ * @description Holder of the canvas and most of the components used to render it, meshes excluded.
+ * @description Contains all the functions and events used for the camera movement, becouse they are caught at the top level container. BaseScene then passes them at the dedicated component.
+ * @description The Mesh instantiation is deferred to a dedicated component, so to leave the canvas free to accept any kind and quantity of objects.
+ */
 const BaseScene: React.FC<BaseSceneProps> = (props) => {
+	/** @description Boolean used to activate or deactivate the mouse control for the rotation of the camera. */
     const [cameraControl, setCameraControl] = useState<boolean>(false);
+	/** @description This is the movement mapper used to move the camera. It uses this structure to let the camera moves in multiple directions at once. */
     let cameraMovement = {
         goLeft: false,
         goRight: false,
@@ -24,11 +32,11 @@ const BaseScene: React.FC<BaseSceneProps> = (props) => {
         rotateDown: false,
     };
 
+	/** @description small fix to let the user control the canvas as soon as the page is loaded*/
     const containerRef = useRef<HTMLDivElement>(null!);
     const focusScene = (): void => {
         containerRef.current.focus();
     };
-
     useEffect(() => {
         focusScene();
     }, []);
@@ -138,6 +146,7 @@ const BaseScene: React.FC<BaseSceneProps> = (props) => {
                     isActive={cameraControl}
                     setCameraRef={props.updateCameraRef}
                 />
+				{/** @description base plane of the canvas */}
                 <mesh receiveShadow rotation={new Euler(-Math.PI / 2, 0, 0)} position={[0, -10, 0]}>
                     <planeGeometry args={[1000, 1000]} />
                     <meshStandardMaterial color="#f0f0f0" />

@@ -4,7 +4,9 @@ import mountainImg from "../data/associatedImg/mountain.jpg"
 import riverImg from "../data/associatedImg/river.jpg"
 import squirrelImg from "../data/associatedImg/squirrel.jpg"
 
-// meshes that will be loaded at the start of the scene
+/**
+ * @description Meshes loaded at the start of the application
+ */
 const baseMeshes = [
 	{
 		id: "gray",
