@@ -16,6 +16,8 @@ interface ActionsProps {
  * @description Holds all the actions present in the UI, excluding the list of all the present meshes.
  * @description To create a new Mesh we use 2 parameters: Geometry or Type and Color. Both of those are handled by standard inputs.
  * @description There is a small screen check to hide the control tutorial in case the sandbox is run on mobile
+ * 
+ * @ignore The 3 errors at line 29, 30 and 31 are a small bug between Typescript and React, where the Ref Type doesn't export the .current property.
  */
 const Actions: React.FC<ActionsProps> = (props) => {
 	const [meshType, setMeshType] = useState<string>("cube")
