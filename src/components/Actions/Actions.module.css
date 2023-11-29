@@ -1,0 +1,12 @@
+
+
+.actionContainer {
+	position: absolute;
+	z-index: 10;
+}
+
+.controlsInfo {
+	position: fixed;
+	right: 20px;
+	background-color: bisque;
+}
