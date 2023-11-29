@@ -14,7 +14,8 @@ interface ActionsProps {
 const Actions: React.FC<ActionsProps> = (props) => {
 	const [meshType, setMeshType] = useState<string>("cube")
 	const [meshColor, setMeshColor] = useState<string>("#32a852")
-
+	const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth)
+	console.log(screenWidth)
 	const resetCamera = ():void => {
 		if (props.cameraRef && props.sceneRef) {
 			props.cameraRef.position.set(0, 5, 10)
@@ -52,6 +53,7 @@ const Actions: React.FC<ActionsProps> = (props) => {
             className={styles.resetCameraAction} >
                 Reset camera
             </button>
+			{screenWidth > 768 && (
 			<div className={style.controlsInfo}>
 				<p>Press WASD to move the camera around</p>
 				<p>Rotate the wheel to zoom</p>
@@ -59,6 +61,7 @@ const Actions: React.FC<ActionsProps> = (props) => {
 				<p>You can use the arrow keys to move the camera aswell</p>
 				<p>Double click on a mesh to select it</p>
 			</div>
+			)}
         </div>
     );
 };

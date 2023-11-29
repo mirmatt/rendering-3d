@@ -1,7 +1,7 @@
 import { Html, PivotControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { Mesh } from "three";
+import { EdgesGeometry, LineBasicMaterial, LineSegments, Mesh } from "three";
 import geometriesMapping from "../../types/geometryMapping";
 import styles from "./MeshFactory.module.css";
 
@@ -26,6 +26,13 @@ const MeshFactory: React.FC<MeshFactoryProps> = (props) => {
     useFrame(({ clock }) => {
         // cubeRef.current.rotation.y = clock.getElapsedTime();
     });
+
+	useEffect(() => {
+		const geo = new EdgesGeometry(cubeRef.current.geometry)
+		const mat = new LineBasicMaterial({color: "black"})
+		const wireframe = new LineSegments(geo, mat)
+		cubeRef.current.add(wireframe)
+	}, [])
 
     return (
         <>

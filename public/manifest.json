@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mesh Sandox",
+  "name": "Sandbox to move around shapes",
   "icons": [
     {
       "src": "favicon.ico",
