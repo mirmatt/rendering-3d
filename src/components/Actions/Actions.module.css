@@ -3,10 +3,25 @@
 .actionContainer {
 	position: absolute;
 	z-index: 10;
+	margin: 16px 0 0 18px;
 }
 
 .controlsInfo {
 	position: fixed;
 	right: 20px;
-	background-color: bisque;
+	background-color: rgba(62, 60, 57, 0.2);
+	top: 16px;
+	padding: 12px;
+}
+
+.addAction, .shapePicker {
+	margin-right: 12px;
+}
+
+.colorPicker {
+	height: 22px;
+}
+
+.resetCameraAction {
+	margin-top: 12px;
 }

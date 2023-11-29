@@ -74,7 +74,7 @@ const CameraControl: React.FC<CameraControlsProps> = (props) => {
 
     return (
         <>
-            <FirstPersonControls ref={controlRef} lookSpeed={0.5} enabled={props.isActive} />
+            <FirstPersonControls ref={controlRef} lookSpeed={0.5} enabled={props.isActive}/>
         </>
     );
 };

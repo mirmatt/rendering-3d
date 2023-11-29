@@ -127,12 +127,12 @@ const BaseScene: React.FC<BaseSceneProps> = (props) => {
                 height: "100%",
             }}
         >
-            <Canvas shadows camera={{ position: [-5, 5, 5] }} onCreated={() => {
+            <Canvas shadows camera={{ position: [0, 5, 10] }} onCreated={() => {
 				props.setSceneRef(containerRef)
 			}}>
                 <ambientLight />
                 <spotLight position={[10, 10, 5]} angle={0.25} penumbra={0.5} castShadow />
-                <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+                <pointLight position={[0, 5, 15]} decay={0} intensity={Math.PI / 2} />
                 <CameraControl
                     direction={cameraMovement}
                     isActive={cameraControl}

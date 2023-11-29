@@ -8,12 +8,18 @@
 	border-radius: 5px;
 }
 
+.meshLabel > a {
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: white;
+}
+
 .meshLabel::before {
 	content: "";
 	position: absolute;
 	top: 25px;
-	left: -40px;
+	left: -50px;
 	height: 1px;
-	width: 40px;
+	width: 50px;
 	background: black;
   }

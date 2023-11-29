@@ -12,14 +12,15 @@ const MeshList: React.FC<MeshListProps> = (props) => {
             {props.meshesList.map((meshId) => {
                 return (
                     <div className={styles.meshRowContainer}>
-                        <p>{meshId}</p>
-                        <img
+						<img
                             src={trashcan}
                             alt="delete-mesh-icon"
                             onClick={() => {
                                 props.deleteMesh(meshId);
                             }}
                         ></img>
+                        <p>{meshId}</p>
+                        
                     </div>
                 );
             })}
